@@ -1,0 +1,21 @@
+/*
+  Tag based Style
+  Element based styling
+  id based styling
+  class based styling
+*/
+body{
+    background-color: rgb(51, 65, 120) ;
+}
+/* class based styling will start with a period
+  it is reusable 
+*/
+.container{
+    margin-left: 8.33%;
+    margin-right:8.33%;
+    border: 1px solid whitesmoke;
+    padding: 1%;
+    box-shadow: 5px 10px 10px whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
