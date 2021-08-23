@@ -7,10 +7,13 @@
 body{
     background-color: rgb(51, 65, 120) ;
 }
+.div-box{
+    background-color: gray;
+}
 /* class based styling will start with a period
   it is reusable 
 */
-.container{
+/* .container{
     margin-left: 8.33%;
     margin-right:8.33%;
     border: 1px solid whitesmoke;
@@ -19,3 +22,29 @@ body{
     font-family: 'Times New Roman', Times, serif;
     font-size: 18px;
 }
+.textbox{
+    height: 30px;
+    width: 150px;
+    padding-left: 1%;
+}
+
+#txtPost{
+    width: 400px;
+    height:100px;
+    padding:1%;
+}
+/* Inheritance */
+.divOverride{
+    border: 1px solid red;
+}
+.divParent{
+    width: 300px;
+    height:200px;
+    border: 1px solid whitesmoke;
+    margin:10%;
+    display: none;
+} */
+
+
+
+

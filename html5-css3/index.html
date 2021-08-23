@@ -9,9 +9,11 @@
 
     <!--To refer css and fonts-->
     <link rel="stylesheet" href="./style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <!--to refer js files-->
     <script></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
     <!--Page Specific CSS if you want to write-->
     <style>
@@ -20,69 +22,116 @@
 </head>
 
 <body>
-    <!--
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
    
-        <h1>Block level elements will occupy the complete screen/container width. heading,paragraph, 
-            division and tables are considered as block level elements </h1>
-        <h1>Welcome to DBS</h1>
-        <p>Welcome to DBS Paragraph1</p>
-        <p>Welcome to DBS Paragraph2</p>
-        <div>Div Tag one</div>
-        <br/>
-        <div>Div Tag two</div>
-        <table>
-            <tr>
-                <td>
-                    name
-                </td>
-                <td>
-                    age
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    kiran   
-                </td>
-                <td>
-                    30
-                </td>
-            </tr>
-        </table>
-    
-        <label>I am lable one Inline </label>
-        <label>I am lable two Inline</label>
-        <br/>
-        <span>I am span one </span>
-        <span>I am span two </span>
-       -->
-    <div class="container">
-        <div>
-            <input type="text" id="txtFirstName" placeholder="Enter First Name" name="txtFirstName" />
+      <div class="container">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://rukminim1.flixcart.com/flap/50/50/image/635e237651ae052d.jpg?q=50" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="https://rukminim1.flixcart.com/flap/50/50/image/0ceb600aaf83b203.jpeg?q=50" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="https://rukminim1.flixcart.com/flap/50/50/image/29c917f5ef771171.jpg?q=50" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <!--Grid layout-->
+          <div class="row">
+              <div class="col-md-12 div-box">I am 12 divisions</div>
+          </div>
 
+         
+        
+      </div>
+      <div class="container">
+       
+       
+     
+        <div class="row mt-1">
+            <div class="col-lg-1 col-md-3 col-sm-6 col-xs-12 div-box">I am 1 divisions</div>
+            <div class="col-lg-1 col-md-3 col-sm-6 col-xs-12 div-box">I am 1 divisions</div>
+            <div class="col-lg-1 col-md-3 col-sm-6 col-xs-12 div-box">I am 1 divisions</div>
+            <div class="col-lg-1 col-md-3 col-sm-6 col-xs-12 div-box">I am 1 divisions</div>
+            <div class="col-lg-1 col-md-3 col-sm-6 col-xs-12 div-box">I am 1 divisions</div>
+            <div class="col-lg-1 col-md-3 col-sm-6 col-xs-12 div-box">I am 1 divisions</div>
+            <div class="col-lg-1 col-md-3 col-sm-6 col-xs-12 div-box">I am 1 divisions</div>
+            <div class="col-lg-1 col-md-3 col-sm-6 col-xs-12 div-box">I am 1 divisions</div>
+            <div class="col-lg-1 col-md-3 col-sm-6 col-xs-12 div-box">I am 1 divisions</div>
+            <div class="col-lg-1 col-md-3 col-sm-6 col-xs-12 div-box">I am 1 divisions</div>
+            <div class="col-lg-1 col-md-3 col-sm-6 col-xs-12 div-box">I am 1 divisions</div>
+            <div class="col-lg-1 col-md-3 col-sm-6 col-xs-12 div-box">I am 1 divisions</div>
         </div>
-        <div>
-            <input type="checkbox" id="agreeTemrs" name="agreeTerms" />
-
+        <!-- <div class="row mt-1">
+            <div class="col-md-2 div-box">I am 2 divisions</div>
+            <div class="col-md-2 div-box">I am 2 divisions</div>
+            <div class="col-md-2 div-box">I am 2 divisions</div>
+            <div class="col-md-2 div-box">I am 2 divisions</div>
+            <div class="col-md-2 div-box">I am 2 divisions</div>
+            <div class="col-md-2 div-box">I am 2 divisions</div>
         </div>
-        <div>
-            <input type="radio" id="genderM" value="M" name="gender" />Male
-            <input type="radio" value="F" id="genderF" name="gender" />Female
+       
+        <div class="row mt-1">
+            <div class="col-md-3 div-box">I am 3 divisions</div>
+            <div class="col-md-3 div-box">I am 3 divisions</div>
+            <div class="col-md-3 div-box">I am 3 divisions</div>
+            <div class="col-md-3 div-box">I am 3 divisions</div>
         </div>
-        <div>
-            <select id="ddlCountry" name="ddlCountry">
-                <option value="">Please Select</option>
-                <option value="IN">India</option>
-                <option value="US">United States</option>
-            </select>
-
+        <div class="row mt-1">
+            <div class="col-md-4 div-box">I am 4 divisions</div>
+            <div class="col-md-4 div-box">I am 4 divisions</div>
+            <div class="col-md-4 div-box">I am 4 divisions</div>
         </div>
-        <div>
-            <textarea id="txtPost" name="textPost"> </textarea>
-        </div>
-        <img src="https://1000logos.net/wp-content/uploads/2021/05/DBS-Bank-logo.png" height="50px" width="80px" />
-    </div>
-
-
+        <div class="row mt-1">
+            <div class="col-md-6 div-box">I am 6 divisions</div>
+            <div class="col-md-6 div-box">I am 6 divisions</div>
+        </div> -->
+      </div>
 
 </body>
 
