@@ -13,6 +13,12 @@ body{
 .nav-border{
     border: 1px solid gray;
 }
+.imgcard{
+    height: 150px !important;
+    width: 95%  !important;
+    padding: 3% !important;
+    border: none!important;
+}
 /* class based styling will start with a period
   it is reusable 
 */
