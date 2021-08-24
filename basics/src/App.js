@@ -1,12 +1,10 @@
-import DropDown from "./components/dropdown"
-import TextBox from "./components/textbox"
 
+import Header from "./components/header"
 
 const App = () => {
   return (
     <div>
-      <TextBox/>
-      <DropDown/>
+      <Header/>
     </div>
   );
 }
