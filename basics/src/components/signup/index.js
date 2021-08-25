@@ -1,16 +1,17 @@
 import { useState } from "react";
 const Signup = (props) => {
+    const countriesList = [
+        { name: "Select Country", value: '' },
+        { name: "India", value: "IN" },
+        { name: "United State", value: "USA" }];
     const [register, setRegister] = useState({ email: 'Kiran@gmail.com', userName: "kiran" });
     const handleInputChange = (e) => {
-        if (e.target.name == 'country') {
-            props.changeCountry(e.target.value)
-        }
         setRegister({
             ...register,
             [e.target.name]: e.target.value
         });
     };
-    const countryOptions = props.countriesList.map((item, index) => {
+    const countryOptions = countriesList.map((item, index) => {
         return <option value={item.value}>{item.name}</option>
     });
     return (
