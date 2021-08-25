@@ -1,5 +1,5 @@
 const NavItems = () => {
-    const list = ["Home","Apparel", "Electronics","About us",  "Contact us", "Login"];
+    const list = ["Home","Products" ,"Signup"];
     //map method;
     const navs = list.map((item, index) => {
         console.log(item);

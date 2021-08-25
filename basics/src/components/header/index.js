@@ -1,6 +1,5 @@
 import NavItems from "../navitems";
-
-const Header =()=>{
+const Header =(props)=>{
     let headerName ="DBS";
 return (
     <div className="container-fluid">
@@ -11,11 +10,11 @@ return (
             <span class="navbar-toggler-icon"></span>
           </button>
             <NavItems/>
+            <a class="navbar-brand" href="#">{props.country?props.country:''}</a>
         </div>
       </nav>
     </div>
    
    )
 }
-
 export default Header
