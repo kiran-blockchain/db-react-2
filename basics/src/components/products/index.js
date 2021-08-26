@@ -13,10 +13,11 @@ const Products = () => {
             <div class="card" >
                 <img src={item.image} class="card-img-top img-thumbnail imgcard" alt="..." />
                 <div class="card-body">
+                    <div class="col-md-12">
                     <h5 class="card-title">{item.name}</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-warning">{item.price}</a>
-                   
+                    <a href="#" class="btn btn-warning mb-3" >Price : Rs.{item.price}</a>
+                   </div>
                     <div class="row">
                         <div class="col-md-1">
                             <button class="btn btn-primary"
@@ -33,7 +34,7 @@ const Products = () => {
                                 dispatch(addToCart(item))
                             }}>+</button>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-1">
                             &nbsp;<button class="btn btn-danger" >Rs.{item.quantity*item.price}</button>
                         </div>
                     </div>
@@ -43,6 +44,7 @@ const Products = () => {
     })
     return (
         <div class="row mt-2">
+            <div class="col-md-2 offset-md-9">Total : {shop.cartTotal}</div>
             {items}
         </div>
     )

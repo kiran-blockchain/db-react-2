@@ -11,11 +11,11 @@ export const CartFeatures = (state = initialState, action) => {
     switch (action.type) {
         case REDUCER_CONSTANTS.CART_ADD_ITEM:
                 updateCart(action, state);
-                return {...state}
+                return {...state,cartTotal:total(state)}
         //logic to add item
         case REDUCER_CONSTANTS.CART_REMOVE_ITEM:
             updateCart(action, state)
-            return {...state}
+            return {...state,cartTotal:total(state)}
         //logic to remove item
 
         default:
