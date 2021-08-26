@@ -1,20 +1,17 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
+import { useDispatch, useSelector } from "react-redux";
+import { getCountryList } from "../../store/auth/action";
 const Signup = () => {
-    // const countriesList = [
-    //     { name: "Select Country", value: '' },
-    //     { name: "India", value: "IN" },
-    //     { name: "United State", value: "USA" }];
+    const auth = useSelector(x=>x.Auth);
+
     const [countries, setCountryList] = useState([]);
     const [register, setRegister] = useState({ email: 'Kiran@gmail.com', userName: "kiran" });
     //if you want to perform async call at the time of loading the ocmpoentn
     //useEffect
-    useEffect(async() => {
-        let response = await axios.get("https://restcountries.eu/rest/v2/all");
-         let countriesList = response.data.map(x=>{
-             return {name:x.name,value:x.alpha2Code};
-         })
-         setCountryList(countriesList);
+    const disptach = useDispatch();
+    useEffect(() => {
+       disptach(getCountryList());
     }, []);
 
     const handleInputChange = (e) => {
@@ -24,7 +21,7 @@ const Signup = () => {
         });
     };
 
-    const countryOptions = countries.map((item, index) => {
+    const countryOptions = auth.countryList.map((item, index) => {
         return <option value={item.value}>{item.name}</option>
     });
     return (
