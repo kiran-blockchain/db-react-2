@@ -1,4 +1,4 @@
-export const products = [
+ const items = [
     {
       "id": 1,
       "name": "Brocolli - 1 Kg",
@@ -210,3 +210,9 @@ export const products = [
       "category": "nuts"
     }
   ];
+
+  export const products = ()=>{
+    return items.map(x=>{
+      return {...x,quantity:0};
+    })
+  }

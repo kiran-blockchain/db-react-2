@@ -1,17 +1,30 @@
-import { useState } from "react";
-const Signup = (props) => {
-    const countriesList = [
-        { name: "Select Country", value: '' },
-        { name: "India", value: "IN" },
-        { name: "United State", value: "USA" }];
+import { useEffect, useState } from "react";
+import axios from 'axios';
+const Signup = () => {
+    // const countriesList = [
+    //     { name: "Select Country", value: '' },
+    //     { name: "India", value: "IN" },
+    //     { name: "United State", value: "USA" }];
+    const [countries, setCountryList] = useState([]);
     const [register, setRegister] = useState({ email: 'Kiran@gmail.com', userName: "kiran" });
+    //if you want to perform async call at the time of loading the ocmpoentn
+    //useEffect
+    useEffect(async() => {
+        let response = await axios.get("https://restcountries.eu/rest/v2/all");
+         let countriesList = response.data.map(x=>{
+             return {name:x.name,value:x.alpha2Code};
+         })
+         setCountryList(countriesList);
+    }, []);
+
     const handleInputChange = (e) => {
         setRegister({
             ...register,
             [e.target.name]: e.target.value
         });
     };
-    const countryOptions = countriesList.map((item, index) => {
+
+    const countryOptions = countries.map((item, index) => {
         return <option value={item.value}>{item.name}</option>
     });
     return (
@@ -59,6 +72,7 @@ const Signup = (props) => {
                         <div class="col-sm-6">
                             <select class="form-control" name="country"
                                 onChange={handleInputChange}>
+                                    <option value="">Select Country</option>
                                 {countryOptions}
                             </select>
                         </div>
@@ -94,7 +108,7 @@ const Signup = (props) => {
                 </div>
             </div>
             <pre>
-                {JSON.stringify(props.countriesList)}
+               
             </pre>
         </div>
     )
