@@ -1,14 +1,16 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Switch, Route } from 'react-router-dom'
 import Categroy from "./components/categories"
 import Header from "./components/header"
 import Home from "./components/home"
 import Products from "./components/products"
 import Signup from "./components/signup"
-import { Provider } from 'react-redux'
-import { createStore, Store } from 'redux'
+import { Provider, useDispatch } from 'react-redux'
+import { createStore, applyMiddleware } from 'redux'
+import thunk  from "redux-thunk"
 import rootReducer from "./store";
-const store = createStore(rootReducer)
+import { getProducts } from "./store/products/action"
+const store = createStore(rootReducer,applyMiddleware(thunk))
 const App = () => {
   const countriesList = [
     { name: "Select Country", value: '' },
@@ -19,6 +21,7 @@ const App = () => {
     console.log(data);
     setCountry(data);
   }
+ 
   return (
     <Provider store={store}>
       <div>

@@ -1,6 +1,13 @@
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { getProducts } from "../../store/products/action";
 import NavItems from "../navitems";
 const Header =(props)=>{
     let headerName ="DBS";
+    const dispatch= useDispatch();
+    useEffect(()=>{
+      dispatch(getProducts());
+    },[]);
 return (
     <div className="container-fluid">
          <nav class="navbar navbar-expand-sm navbar-dark bg-primary">

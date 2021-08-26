@@ -3,19 +3,23 @@ import { REDUCER_CONSTANTS } from "../constants";
 
 //reducer
 const initialState = {
-    cartItems: products(),
+    cartItems:[],
     cartTotal: 0,
     discount: 0
 };
 export const CartFeatures = (state = initialState, action) => {
     switch (action.type) {
+        case REDUCER_CONSTANTS.GET_PRODUCTS_SUCCESS:
+            return { ...state, cartItems: action.data }
+        case REDUCER_CONSTANTS.GET_PRODUCTS_FAILURE:
+            return { ...state, cartItems: [], errorMessage: action.errorMessage }
         case REDUCER_CONSTANTS.CART_ADD_ITEM:
-                updateCart(action, state);
-                return {...state,cartTotal:total(state)}
+            updateCart(action, state);
+            return { ...state, cartTotal: total(state) }
         //logic to add item
         case REDUCER_CONSTANTS.CART_REMOVE_ITEM:
             updateCart(action, state)
-            return {...state,cartTotal:total(state)}
+            return { ...state, cartTotal: total(state) }
         //logic to remove item
 
         default:
