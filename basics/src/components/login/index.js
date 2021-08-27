@@ -15,6 +15,9 @@ const Login = () => {
             <Formik
                 initialValues={init}
                 validationSchema={validationSchema}
+                onSubmit={values=>{
+                    console.log(values);
+                }}
             >
                 {({ handleSubmit, handleChange, values, errors }) => (
                     <form onSubmit={handleSubmit}>
