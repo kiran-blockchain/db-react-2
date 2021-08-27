@@ -3,14 +3,16 @@ import axios from 'axios';
 import { useDispatch, useSelector } from "react-redux";
 import { getCountryList } from "../../store/auth/action";
 const Signup = () => {
+    //From stores
     const auth = useSelector(x=>x.Auth);
 
-    const [countries, setCountryList] = useState([]);
     const [register, setRegister] = useState({ email: 'Kiran@gmail.com', userName: "kiran" });
     //if you want to perform async call at the time of loading the ocmpoentn
     //useEffect
     const disptach = useDispatch();
     useEffect(() => {
+        ///Invoke action
+        
        disptach(getCountryList());
     }, []);
 

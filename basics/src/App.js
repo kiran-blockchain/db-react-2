@@ -10,6 +10,7 @@ import { createStore, applyMiddleware } from 'redux'
 import thunk  from "redux-thunk"
 import rootReducer from "./store";
 import { getProducts } from "./store/products/action"
+import Login from "./components/login"
 const store = createStore(rootReducer,applyMiddleware(thunk))
 const App = () => {
   const countriesList = [
@@ -29,6 +30,7 @@ const App = () => {
         <Switch>
           <Route path="/signup" component={Signup}></Route>
           <Route path="/products" component={Products}></Route>
+          <Route path="/login" component={Login}></Route>
           <Route path="" component={Home} ></Route>
         </Switch>
       </div>

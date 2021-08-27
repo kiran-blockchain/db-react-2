@@ -3,7 +3,8 @@ const NavItems = () => {
     const list = [
         { name: "Home", link: "" },
         { name: "Products", link: "/products" },
-        { name: "Signup", link: "/signup" }];
+        { name: "Signup", link: "/signup" },
+        { name: "Login", link: "/login" }];
     //map method;
     const navs = list.map((item, index) => {
         console.log(item);
