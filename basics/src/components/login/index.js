@@ -4,10 +4,12 @@ import * as Yup from 'yup';
 
 const Login = () => {
     const init = {
-        email: ''
+        email: '',
+        username:''
     };
     const validationSchema = Yup.object().shape({
         email: Yup.string().email('Enter Valid Email').required('Email is required')
+        ,username:Yup.string().matches(/^[a-zA-Z0-9]*$/,"Username is alphanumeric only").required('Enter Username').min(4,"Username must be 4 characters").max(10,'Username cannot exceed 10 characters')
     });
     return (
         <div>
@@ -33,6 +35,18 @@ const Login = () => {
                                                 onChange={handleChange}
                                                 name="email" />
                                                  <div className="text-danger"><ErrorMessage  name="email"/></div>
+                                        </div>
+                                      
+                                    </div>
+                                    <div class= "row mb-3 mt-3">
+                                        <label for="username" class="col-sm-2 col-form-label">Username</label>
+                                        <div class="col-sm-6">
+                                            <input
+                                                className="form-control"
+                                                type="text"
+                                                onChange={handleChange}
+                                                name="username" />
+                                                 <div className="text-danger"><ErrorMessage  name="username"/></div>
                                         </div>
                                       
                                     </div>
